@@ -19,8 +19,8 @@ class LoginForm extends React.Component {
 
   login = (event) => {
     event.preventDefault()
-    if (this.state.username.length > 1 && this.state.password.length > 1) {
-      this.props.handleLogin(this.state.username, this.state.password)
+    if (this.state.username.length > 0 && this.state.password.length > 0) {
+      this.props.handleLogin(this.state)
 
     }
     
@@ -38,7 +38,7 @@ class LoginForm extends React.Component {
         <div>
           <label>
             Password
-            <input onChange={this.handleField} mid="password" name="password" type="password" value={this.state.password} />
+            <input onChange={this.handleField} id="password" name="password" type="password" value={this.state.password} />
           </label>
         </div>
         <div>
